@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<finserusers>
+    <users>
+        <user>
+            <firstName>finserSelenium</firstName>
+            <lastName>AutoUser</lastName>
+            <login>finserSelenium</login>
+            <mailAddress>lebrosso@poczta.fm</mailAddress>
+            <password>Fins@r.1</password>
+        </user>
+    </users>
+</finserusers>
