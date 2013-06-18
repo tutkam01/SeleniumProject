@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import tutka.mateusz.techutils.WaitUtils;
+
 import com.opera.core.systems.OperaDriver;
 
 public class SeleniumConfiguration {
@@ -40,6 +42,10 @@ public class SeleniumConfiguration {
 				driver.manage().window().maximize();
 			driver.get(START_PAGE);
 		}
+		WaitUtils.setImplicitTimeout(20);
+	}
+	protected void stopSelenium(){
+		driver.quit();
 	}
 
 	public static WebDriver getWebDriver() {
