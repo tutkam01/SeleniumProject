@@ -15,8 +15,7 @@ public class SeleniumConfiguration {
 
 	protected void launchSelenium() {
 		if (driver == null) {
-			Browsers browser = Browsers.valueOf((System.getProperty("browser",
-					Browsers.FIREFOX.name())));
+			Browsers browser = Browsers.valueOf((System.getProperty("browser", Browsers.FIREFOX.name())));
 			switch (browser) {
 			case FIREFOX:
 				driver = new FirefoxDriver();
@@ -25,10 +24,8 @@ public class SeleniumConfiguration {
 				driver = new ChromeDriver();
 				break;
 			case OPERA:
-				DesiredCapabilities operaCapabilities = DesiredCapabilities
-						.opera();
-				operaCapabilities.setCapability("opera.binary",
-						"/usr/bin/opera");
+				DesiredCapabilities operaCapabilities = DesiredCapabilities.opera();
+				operaCapabilities.setCapability("opera.binary", "/usr/bin/opera");
 				operaCapabilities.setCapability("opera.port", -1);
 				operaCapabilities.setCapability("opera.profile", "");
 
@@ -44,7 +41,8 @@ public class SeleniumConfiguration {
 		}
 		WaitUtils.setImplicitTimeout(20);
 	}
-	protected void stopSelenium(){
+
+	protected void stopSelenium() {
 		driver.quit();
 	}
 
