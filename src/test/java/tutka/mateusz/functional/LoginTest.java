@@ -63,6 +63,20 @@ public class LoginTest extends SeleniumConfiguration {
 		goBackToLoginPage();
 	}
 
+	/**
+	 * I am checking if I am able to login by user's login after I have logged
+	 * out.
+	 */
+	@Test(priority = 4, enabled = true)
+	public void shouldLoginAgainByLogin() {
+		loginPage.login(finserUser, LoginMode.LOGIN);
+		mainPage.logout();
+		loginPage.login(finserUser, LoginMode.LOGIN);
+		Assert.assertEquals(loginPage.getLoggedUserLogin(), finserUser.getLogin(), "Login process failed!");
+		goBackToLoginPage();
+
+	}
+
 	private void goBackToLoginPage() {
 		mainPage.logout();
 		getWebDriver().get(START_PAGE_URL);
